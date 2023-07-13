@@ -1,58 +1,35 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: nbeaufil <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/31 16:50:56 by nbeaufil          #+#    #+#              #
-#    Updated: 2023/06/04 03:45:54 by nbeaufil         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+# Makefile
+#
+# Author: Noah Beaufils 
+# Date Jul-13-2023
 
-NAME	=	tester
-MAIN	=	main
-OBJDIR	=	object
-SRCDIR	=	srcs
+SRCS		=	ft_strlen.s		\
+				ft_strcpy.s		\
+				ft_strcmp.s
 
-CMD1	=	ft_strlen
-CMD2	=	ft_strcmp
-CMD3	=	ft_strcpy
-CMD4	=	ft_strdup
+NASM		=	nasm
+NASM_FLAG	=	-f elf64
+LIB_NAME	=	libasm.a
 
-all	:
-ifneq (,$(wildcard ./${NAME}))
-		echo make: \'${NAME}\' is already up to date.
-else
-	make ${NAME}
-endif
+OBJS		=	$(SRCS:.s=.o)
 
-$(OBJDIR)	:
-	mkdir ${OBJDIR}
+%.o : %.s
+	$(NASM) $(NASM_FLAG) $< -o $@
 
-create_objs:
-	gcc -c ${MAIN}.c -o ${OBJDIR}/${MAIN}.o
-	nasm -felf64 ${SRCDIR}/${CMD1}.s -o ${OBJDIR}/${CMD1}.o
-	nasm -felf64 ${SRCDIR}/${CMD2}.s -o ${OBJDIR}/${CMD2}.o
-	nasm -felf64 ${SRCDIR}/${CMD3}.s -o ${OBJDIR}/${CMD3}.o
-	nasm -felf64 ${SRCDIR}/${CMD4}.s -o ${OBJDIR}/${CMD4}.o
+all	:	$(LIB_NAME)
 
-${NAME}	:	${OBJDIR} create_objs
-	#ld -m elf_i386 ${OBJDIR}/*.o -o ${NAME}
-	gcc ${OBJDIR}/*.o -o ${NAME}
+$(LIB_NAME)	: $(OBJS)
+	ar rcs $(LIB_NAME) $(OBJS)
+	ranlib $(LIB_NAME)
 
 clean	:
-ifneq (,$(wildcard ./${OBJDIR}/*.o))
-	rm ${OBJDIR}/*.o
-endif
+	rm -f $(OBJS)
 
 fclean	: clean
-ifneq (,$(wildcard ./${NAME}))
-	rm ${NAME}
-endif
+	rm -f $(LIB_NAME)
 
-re	: fclean ${NAME}
+re	: fclean all
 
-.PHONY: re fclean clean
+.PHONY: all clean fclean re
 
 .SILENT:
