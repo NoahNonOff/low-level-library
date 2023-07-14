@@ -22,11 +22,15 @@ $(LIB_NAME)	: $(OBJS)
 	ar rcs $(LIB_NAME) $(OBJS)
 	ranlib $(LIB_NAME)
 
+test	: $(LIB_NAME)
+	gcc test.c $(LIB_NAME) -o test
+
 clean	:
 	rm -f $(OBJS)
 
 fclean	: clean
 	rm -f $(LIB_NAME)
+	rm -f test
 
 re	: fclean all
 
