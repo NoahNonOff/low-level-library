@@ -2,8 +2,10 @@
 
 int	main(void)
 {
-	char	*str = "test";
+	char	*str;
 
-	printf("len -> %ld\n", ft_strlen(str));
+	str = ft_strdup("welcome to earth");
+	printf("str -> |%s|\n", str);
+	free(str);
 	return (0);
 }
