@@ -6,6 +6,8 @@
 SRCS		=	ft_strlen.s		\
 				ft_strcpy.s		\
 				ft_strdup.s		\
+				ft_read.s		\
+				ft_write.s		\
 				ft_strcmp.s
 
 NASM		=	nasm
