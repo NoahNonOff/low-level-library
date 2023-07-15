@@ -1,4 +1,4 @@
-# libasm (42 project)
+# libasm (42 project) [not finished]
 In this project I have to code these funcions:
 - ft_strlen (man 3 strlen)
 - ft_strcpy (man 3 strcpy)
