@@ -22,6 +22,6 @@ char	*ft_strdup(const char *);
 ssize_t	ft_read(int, void *, size_t);
 ssize_t ft_write(int, const void *, size_t);
 
-int	verif_base(char *);
+int	in_base(char, char *);
 
 #endif

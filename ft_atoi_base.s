@@ -7,10 +7,30 @@
 
 extern ft_strlen
 
-global verif_base
+global in_base
 
 ft_atoi_base:
 	xor rax, rax
+	ret
+
+; ============================================ ;
+
+in_base:
+	xor rax, rax ; rax = 0 (i = 0)
+	jmp in_base_loop
+base_loop:
+	inc rax ; rax++ (i++)
+	inc rsi ; *str++
+in_base_loop:
+	cmp BYTE [rsi], 0 ; if (str[i])
+	je ret_error
+	cmp BYTE [rsi], dil ; if (str[i] == rdi)
+	jz ret_
+	jmp base_loop
+
+ret_error:
+	mov rax, -1 ; return -1
+ret_:
 	ret
 
 ; ============================================ ;
