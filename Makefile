@@ -8,10 +8,11 @@ SRCS		=	ft_strlen.s		\
 				ft_strdup.s		\
 				ft_read.s		\
 				ft_write.s		\
-				ft_strcmp.s
+				ft_strcmp.s		\
+				ft_atoi_base.s
 
 NASM		=	nasm
-NASM_FLAG	=	-f elf64
+NASM_FLAG	=	-f elf64 -g
 LIB_NAME	=	libasm.a
 
 OBJS		=	$(SRCS:.s=.o)
@@ -25,8 +26,8 @@ $(LIB_NAME)	: $(OBJS)
 	ar rcs $(LIB_NAME) $(OBJS)
 	ranlib $(LIB_NAME)
 
-test	: $(LIB_NAME)
-	gcc test.c $(LIB_NAME) -o test
+test	: re
+	gcc -g test.c $(LIB_NAME) -o test
 
 clean	:
 	rm -f $(OBJS)
