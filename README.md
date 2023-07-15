@@ -9,5 +9,6 @@ In this project I have to code these funcions:
 ### Links
 * [RFLAGS](https://fr.wikipedia.org/wiki/RFLAGS)
 * [Jump if](https://www.gladir.com/LEXIQUE/ASM/jumpif.htm)
+* [Assembly Language Programming](https://docs.freebsd.org/en/books/developers-handbook/x86/)
 
 Date: Jul 2023
