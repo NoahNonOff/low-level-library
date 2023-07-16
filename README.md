@@ -16,7 +16,7 @@ The goal of this project is to learn asm througth the creation of a library
 - ft_list_remove_if *(comming soon)*
 
 #### usage
-- `make` -> compile the library<br>
+- `make` -> compile a static library **"libasm.a"<br>**
 - `make test` -> compile the library with test.c in test<br>
 - `make clean` -> remove all object file<br>
 - `make fclean` -> remove the library, test, and all object files<br>
