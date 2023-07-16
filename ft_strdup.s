@@ -39,3 +39,8 @@ exit_error:
 ; push |a|  pop |b| --> r8 = a
 ; (a)  |b| (r8) | |
 ;      | |      | |
+
+; PLT:
+; PLT stands for Procedure Linkage Table which is, put simply, used to call external
+; procedures/functions whose address isn't known in the time of linking, and is left
+; to be resolved by the dynamic linker at run time.
