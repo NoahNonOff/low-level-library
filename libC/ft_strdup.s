@@ -1,6 +1,6 @@
 ; ft_strcmp.s
 ;
-; Author: Noah Beaufils 
+; Author: Noah Beaufils
 ; Date Jul-14-2023
 
 		%define NULL 0x00

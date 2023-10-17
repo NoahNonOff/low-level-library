@@ -1,40 +1,20 @@
-#include "libasm.h"
+// test.c
+//
+// Author: Noah Beaufils
+// Date: Oct-17-2023
 
-void	print_list(t_list **lst);
+#include "libC/libC.h"
+#include "math/math.h"
+#include "linked_list/linked_list.h"
 
-int	main(int ac, char **av)
-{
-	int	a = 42;
-	int	b = 27;
-	int	c = 32;
-	int	d = 127;
-	t_list	**lst;
-	t_list	*ls;
+#include <stdio.h>
 
-	lst = &ls;
-	ls = ft_create_elem((void *)&a);
+int	main(int ac, char *av[]) {
 
-	ft_list_push_front(&ls, (void *)&b);
-	ft_list_push_front(&ls, (void *)&c);
-	ft_list_push_front(&ls, (void *)&d);
+	int a = 45;
+	int b = -27;
 
-	printf("list_len (%d):\n", ft_list_size(ls));
-	print_list(lst);
-	free_list(ls);
-	return (0);
-}
-
-void	print_list(t_list **lst)
-{
-	int		i = 0;
-	t_list	*act;
-
-	if (!lst)
-		return ;
-	act = *lst;
-	while (act)
-	{
-		printf("%d) data = %d\n", i++, *(int *)act->data);
-		act = act->next;
-	}
+	printf("%d\n", ll_abs(a));
+	printf("%d\n", ll_abs(b));
+	return 0;
 }

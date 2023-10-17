@@ -1,0 +1,6 @@
+# exclude object files
+*.o
+# exclude the library
+libasm.a
+# exclude text file
+*.txt

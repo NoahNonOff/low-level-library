@@ -1,25 +1,34 @@
 # Makefile
 #
-# Author: Noah Beaufils 
-# Date Jul-13-2023
+# Author: Noah Beaufils
+# Date Oct-17-2023
 
-SRCS		=	ft_strlen.s				\
-				ft_strcpy.s				\
-				ft_strdup.s				\
-				ft_strcmp.s				\
-				ft_write.s				\
-				ft_read.s				\
-				free_list.s				\
-				ft_atoi_base.s			\
-				ft_list_size.s			\
-				ft_create_elem.s		\
-				ft_list_push_front.s
+LIBC = libC/
+LST = linked_list/
+MATH = math/
+NASM = nasm
+NASM_FLAG = -f elf64
+LIB_NAME = libasm.a
 
-NASM		=	nasm
-NASM_FLAG	=	-f elf64
-LIB_NAME	=	libasm.a
+SRCS =	${LIBC}ft_strlen.s				\
+		${LIBC}ft_strcpy.s				\
+		${LIBC}ft_strdup.s				\
+		${LIBC}ft_strcmp.s				\
+		${LIBC}ft_write.s				\
+		${LIBC}ft_read.s				\
+		${LIBC}ft_atoi_base.s			\
+\
+		${MATH}add.s					\
+		${MATH}minus.s					\
+		${MATH}mult.s					\
+		${MATH}abs.s					\
+\
+		${LST}free_list.s				\
+		${LST}ft_list_size.s			\
+		${LST}ft_create_elem.s			\
+		${LST}ft_list_push_front.s
 
-OBJS		=	$(SRCS:.s=.o)
+OBJS = $(SRCS:.s=.o)
 
 %.o : %.s
 	$(NASM) $(NASM_FLAG) $< -o $@
