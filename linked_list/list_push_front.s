@@ -1,4 +1,4 @@
-; ft_list_push_front.s
+; list_push_front.s
 ;
 ; Author: Noah Beaufils
 ; Date Jul-16-2023
@@ -6,12 +6,12 @@
 extern ft_create_elem
 		%define NULL 0x00
 
-global ft_list_push_front
+global ll_list_push_front
 
 ; rdi -> **list
 ; rsi -> data
 
-ft_list_push_front:
+ll_list_push_front:
 	cmp rdi, NULL ; if rdi == NULL
 	je ret_
 

@@ -1,18 +1,18 @@
-; ft_strcmp.s
+; strdup.s
 ;
 ; Author: Noah Beaufils
 ; Date Jul-14-2023
 
 		%define NULL 0x00
 
-global	ft_strdup
+global	ll_strdup
 
-extern	malloc, ft_strlen, ft_strcpy
+extern	malloc, ll_strlen, ll_strcpy
 
-ft_strdup:
+ll_strdup:
 	cmp rdi, NULL ; check if str == NULL
 	jz exit_error
-	call ft_strlen ; rax = ft_strlen
+	call ll_strlen ; rax = ll_strlen
 	inc rax ; rax++
 	push rdi ; save rdi in stack
 	mov rdi, rax
@@ -25,7 +25,7 @@ ft_strdup:
 	pop r8
 	mov rdi, rax
 	mov rsi, r8
-	call ft_strcpy
+	call ll_strcpy
 	ret
 
 exit_error:

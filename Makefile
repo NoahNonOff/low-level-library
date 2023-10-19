@@ -10,24 +10,24 @@ NASM = nasm
 NASM_FLAG = -f elf64
 LIB_NAME = libasm.a
 
-SRCS =	${LIBC}ft_strlen.s				\
-		${LIBC}ft_strcpy.s				\
-		${LIBC}ft_strdup.s				\
-		${LIBC}ft_strcmp.s				\
-		${LIBC}ft_write.s				\
-		${LIBC}ft_read.s				\
-		${LIBC}ft_atoi_base.s			\
+SRCS =	${LIBC}strlen.s				\
+		${LIBC}strcpy.s				\
+		${LIBC}strdup.s				\
+		${LIBC}strcmp.s				\
+		${LIBC}write.s				\
+		${LIBC}read.s				\
+		${LIBC}atoi_base.s			\
 \
-		${MATH}add.s					\
-		${MATH}div.s					\
-		${MATH}minus.s					\
-		${MATH}mult.s					\
-		${MATH}abs.s					\
+		${MATH}add.s				\
+		${MATH}div.s				\
+		${MATH}minus.s				\
+		${MATH}mult.s				\
+		${MATH}abs.s				\
 \
-		${LST}free_list.s				\
-		${LST}ft_list_size.s			\
-		${LST}ft_create_elem.s			\
-		${LST}ft_list_push_front.s
+		${LST}free_list.s			\
+		${LST}list_size.s			\
+		${LST}create_elem.s			\
+		${LST}list_push_front.s
 
 OBJS = $(SRCS:.s=.o)
 

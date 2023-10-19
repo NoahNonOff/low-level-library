@@ -1,13 +1,13 @@
-; ft_strlen.s
+; strlen.s
 ;
 ; Author: Noah Beaufils 
 ; Date Jul-13-2023
 
 		%define	NULL 0x00
 
-global	ft_strlen
+global	ll_strlen
 
-ft_strlen:
+ll_strlen:
 	xor rax, rax ; rax == 0
 	cmp rdi, NULL ; if (str == NULL)
 	jz exit

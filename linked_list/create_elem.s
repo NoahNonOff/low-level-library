@@ -1,4 +1,4 @@
-; ft_create_elem.s
+; create_elem.s
 ;
 ; Author: Noah Beaufils
 ; Date Jul-16-2023
@@ -6,12 +6,12 @@
 extern malloc
 		%define NULL 0x00
 
-global ft_create_elem
+global ll_create_elem
 
 ; sizeof(t_list) -> 16
 ; sizeof(void *) -> 8
 
-ft_create_elem:
+ll_create_elem:
 	push rdi
 	mov rdi, 16
 	call malloc WRT ..plt

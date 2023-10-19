@@ -1,14 +1,14 @@
-; ft_write.s
+; read.s
 ;
 ; Author: Noah Beaufils 
 ; Date Jul-15-2023
 
-global ft_write
+global ll_read
 
 extern __errno_location
 
-ft_write:
-	mov rax, 1
+ll_read:
+	xor rax, rax
 	syscall
 	cmp rax, 0
 	jl error
@@ -21,3 +21,4 @@ error:
 	mov [rax], r8
 	mov rax, -1
 	ret
+

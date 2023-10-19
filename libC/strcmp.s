@@ -1,13 +1,13 @@
-; ft_strcmp.s
+; strcmp.s
 ;
 ; Author: Noah Beaufils 
 ; Date Jul-13-2023
 
 		%define NULL 0x00
 
-global ft_strcmp
+global ll_strcmp
 
-ft_strcmp:
+ll_strcmp:
 	cmp rdi, NULL ; check if str1 == NULL
 	jz exit_error
 	cmp rsi, NULL ; check if str2 == NULL

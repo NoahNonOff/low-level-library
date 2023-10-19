@@ -1,13 +1,13 @@
-; ft_strcpy.s
+; strcpy.s
 ;
 ; Author: Noah Beaufils 
 ; Date Jul-13-2023
 
 		%define NULL 0x00
 
-global ft_strcpy
+global ll_strcpy
 
-ft_strcpy:
+ll_strcpy:
 	xor rax, rax ; rax = 0
 	cmp rsi, NULL ; if str == NULL
 	jz exit_error

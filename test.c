@@ -3,9 +3,7 @@
 // Author: Noah Beaufils
 // Date: Oct-17-2023
 
-#include "libC/libC.h"
-#include "math/math.h"
-#include "linked_list/linked_list.h"
+#include "ll_lib.h"
 
 #include <stdio.h>
 #include <errno.h>

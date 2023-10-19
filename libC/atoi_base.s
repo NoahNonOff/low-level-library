@@ -1,15 +1,15 @@
-; ft_atoi_base.s
+; atoi_base.s
 ;
 ; Author: Noah Beaufils 
 ; Date Jul-16-2023
 
 		%define NULL 0x00
 
-extern ft_strlen
+extern ll_strlen
 
-global ft_atoi_base
+global ll_atoi_base
 
-ft_atoi_base:
+ll_atoi_base:
 	xor rax, rax ; rbx = 0
 	xor r8, r8 ; rbx = 0
 	xor rbx, rbx ; rbx = 0
@@ -109,10 +109,10 @@ ret_:
 ; ============================================ ;
 
 verif_base:
-	call ft_strlen
+	call ll_strlen
 	cmp rax, 2 ; check if base's length is bigger than 1
 	jb ret_zero
-	mov r9, rax ; save result of ft_strlen in r9
+	mov r9, rax ; save result of ll_strlen in r9
 
 verif_loop1:
 	cmp BYTE [rdi + 1], NULL
