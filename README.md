@@ -28,4 +28,4 @@ The goal of this project is to learn asm througth the creation of a library
 * [Multiplication](https://stackoverflow.com/questions/40893026/mul-function-in-assembly)
 * [Register](https://tirkarp.medium.com/understanding-x86-assembly-5d7d637efb5)
 
-Date: Jul 2023
+Date: Oct 2023
