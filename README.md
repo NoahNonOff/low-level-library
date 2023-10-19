@@ -1,31 +1,22 @@
-# libasm (42 project)
-The goal of this project is to learn asm througth the creation of a library
-### Funcions:
-- ft_strlen (man 3 strlen)
-- ft_strcpy (man 3 strcpy)
-- ft_strcmp (man 3 strcmp)
-- ft_write (man 2 write)
-- ft_read (man 2 read)
-- ft_strdup (man 3 strdup, you can call to malloc)
-- ft_atoi_base
-- ft_create_elem
-- free_list
-- ft_list_push_front
-- ft_list_size
-- ft_list_sort *(comming soon)*
-- ft_list_remove_if *(comming soon)*
+# low-level-library
+**ll_lib** is a fast library using the power of assembler to work directly with registers. To do it, I use netwise assembler (nasm), see the [documentation](https://www.nasm.us/)<br>
+The library provides a bunch of function about linked-list, math or classical C functions
+### Dependencies:
+None...
 
-#### usage
-- `make` -> compile a static library **"libasm.a"<br>**
-- `make test` -> compile the library with test.c in test<br>
-- `make clean` -> remove all object file<br>
-- `make fclean` -> remove the library, test, and all object files<br>
+### usage
+After compiling the library, you have to link it with one of your project (1). **WARNING:** Remember to include the library in one of your file (2)
+```shell
+gcc $(FLAGS) libasm.a $(OBJECT_FILE) -o exec_name
+```
+```C
+#include "ll_lib.h"
+```
 
 ### Links
-* [RFLAGS](https://fr.wikipedia.org/wiki/RFLAGS)
-* [Jump if](https://www.gladir.com/LEXIQUE/ASM/jumpif.htm)
-* [Assembly Language Programming](https://docs.freebsd.org/en/books/developers-handbook/x86/)
-* [Multiplication](https://stackoverflow.com/questions/40893026/mul-function-in-assembly)
-* [Register](https://tirkarp.medium.com/understanding-x86-assembly-5d7d637efb5)
-
+Here are the links I use to learn assembly and so build this library
+* [understand the concept of register](https://tirkarp.medium.com/understanding-x86-assembly-5d7d637efb5)
+* [understand the FLAGS register](https://fr.wikipedia.org/wiki/RFLAGS)
+* [List of Jump conditions](https://www.gladir.com/LEXIQUE/ASM/jumpif.htm)
+<br>
 Date: Oct 2023
