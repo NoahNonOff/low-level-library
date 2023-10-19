@@ -19,6 +19,7 @@ SRCS =	${LIBC}ft_strlen.s				\
 		${LIBC}ft_atoi_base.s			\
 \
 		${MATH}add.s					\
+		${MATH}div.s					\
 		${MATH}minus.s					\
 		${MATH}mult.s					\
 		${MATH}abs.s					\

@@ -8,13 +8,12 @@
 #include "linked_list/linked_list.h"
 
 #include <stdio.h>
+#include <errno.h>
 
 int	main(int ac, char *av[]) {
 
-	int a = 45;
-	int b = -27;
-
-	printf("%d\n", ll_abs(a));
-	printf("%d\n", ll_abs(b));
+	printf("%d\nEPERM = %d\n", ll_div(8, 0), EPERM);
+	if (errno == EPERM)
+		perror("8/0");
 	return 0;
 }

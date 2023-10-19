@@ -16,9 +16,9 @@ typedef struct s_list
 
 /* ========== protos ========== */
 
-int 	ft_list_size( t_list * );
-void	free_list( t_list * );
-void	ft_list_push_front( t_list **, void * );
-t_list	*ft_create_elem( void * );
+extern int 	ft_list_size( t_list * );
+extern void	free_list( t_list * );
+extern void	ft_list_push_front( t_list **, void * );
+extern t_list	*ft_create_elem( void * );
 
 #endif
